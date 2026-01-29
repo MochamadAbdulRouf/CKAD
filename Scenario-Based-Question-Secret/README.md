@@ -5,8 +5,8 @@ Context:
 
 You are tasked to create a secret and consume the secret in a pod using environment variables as follow:
 - Task
-• Create a secret named another-secret with a key/value pair; key1/value4
-• Start an nginx pod named nginx-secret using container image nginx,
+1. Create a secret named another-secret with a key/value pair; key1/value4
+2. Start an nginx pod named nginx-secret using container image nginx,
     and add an environment variable exposing the value of the secret key key1, using COOL_VARIABLE as the name for the               environment variable inside the pod
 
 1.
