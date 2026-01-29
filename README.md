@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/CKAD.Credly.png" width="400">
+  <img src="CKAD.Credly.png" width="400">
 </p>
 
 # CKAD: Certified Kubernetes Application Developer
