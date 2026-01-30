@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-with-liveness-probe
+spec:
+  containers:
+    - name: nginx-pod-with-liveness-probe
+      image: nginx
+      ports:
+        - containerPort: 80
+      command:
+        - /bin/sh
+        - -c
+        - |
+          touch /usr/share/nginx/html/live
+          nginx -g "daemon off;"
+      livenessProbe:
+        initialDelaySeconds: 5 # 1st liveness check after 5 seconds
+        periodSeconds: 10 # subsequent liveness checks every 10 seconds
+        failureThreshold: 1
+        httpGet:
+          path: /live
+          port: 80
+
+# This is how to run the file manifest
+# k create -f liveness.yaml \
+# && watch --differences --interval 1 kubectl get po nginx-pod-with-liveness-probe
