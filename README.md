@@ -20,3 +20,27 @@ alias kcgn='kubectl get nodes'
 alias kgpan='kubectl get pods --all-namespaces'
 alias kgdan='kubectl get deployments --all-namespaces'
 ```
+
+## Membuat alias permanen
+
+1. Masuk ke direktori root lalu edit bashrc nya
+```bash
+vi /root/.bashrc
+```
+
+2. Paste alias di atas, di dalam file `.bashrc`. example :
+![ss-bashrc](./images/alias-bashrc.png)
+
+3. Aktifkan perubahan bashrc
+```bash
+source /root/.bashrc
+```
+
+4. Kalau untuk user biasa juga bisa di setting, karena di atas hanya khusus untuk root user. example :
+```bash
+vi /home/rouf/.bashrc
+```
+note: jika sudah di paste silahkan di aktifnya dengan command berikut:
+```bash
+source ~/.bashrc
+```
