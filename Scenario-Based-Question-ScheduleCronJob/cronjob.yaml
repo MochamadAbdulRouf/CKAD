@@ -15,7 +15,7 @@ spec:
               name: hello
               resources: {}
               args: ["/bin/sh", "-c", "date"]
-          restartPolicy: never
+          restartPolicy: Never
   schedule: "*/1 * * * *"
   startingDeadlineSeconds: 22
   concurrencyPolicy: Allow
