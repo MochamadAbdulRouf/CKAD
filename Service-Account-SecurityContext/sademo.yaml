@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        app: demo
+        app: sademo
     spec:
       # 1st change for security context and volumes
 
