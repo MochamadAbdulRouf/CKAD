@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sademo
+    name: sademo
+    namespace: serviceaccountdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sademo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      # 1st change for security context and volumes
+
+      securityContext:
+      runAsUser: 1000
+      runAsGroup: 3000
+      fsGroup: 2000
+      volumes:
+        - name: sec-ctx-vol
+          emptyDir: {}
+
+      containers:
+        - image: busybox:1.28
+          name: busybox
+
+          # 2st Change for security context and volume mounts
+
+          command: ["sh", "-c", "sleep 1h"]
+          volumeMounts:
+            - name: sec-ctx-vol
+              mountPath: /data/demo
+          securityContext:
+            allowPrivilegesEscalation: false
+            privileged: false
+          resources: {}
+status: {}
