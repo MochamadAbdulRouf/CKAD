@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1 # fix change to apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test
+  name: test
+  namespace: cobra
+spec:
+  replicas: 1
+  selector: # add selector
+    matchLabels:
+      app: test
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
+          resources: {}
+status: {}

@@ -1,0 +1,20 @@
+apiVersion: apps/v1 # Fix version API
+kind: Deployment
+metadata:
+  labels:
+    run: nginx
+  name: deploy-nginx
+  namespace: cobra # Add namespace
+spec:
+  selector: # Add selector
+    matchLabels:
+      run: nginx
+
+  template:
+    metadata:
+      labels:
+        run: nginx
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
