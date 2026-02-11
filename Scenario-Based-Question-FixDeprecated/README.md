@@ -27,3 +27,8 @@ k create deployment test --image=nginx --dry-run=client -oyaml
 look at my file manifest `www.yaml`
 
 4. Add selector and try, look at file `www.yaml`
+
+5. Verify
+```bash
+k create -f www.yaml
+```
