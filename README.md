@@ -44,3 +44,53 @@ note: jika sudah di paste silahkan di aktifnya dengan command berikut:
 ```bash
 source ~/.bashrc
 ```
+
+## How to create Kubernetes Yaml manifest quickly 
+
+Install ektension vscode berikut ![ektension-kubernetes](https://code.visualstudio.com/docs/azure/kubernetes?ref=devopscube.com)
+
+Atau bisa menggunakan cara berikut 
+
+### Kubectl YAML Dry Run example
+
+1. Create pod YAML
+    - membuat sebuah pod YAML dengan nama myapp menggunakan ektension nginx:latest.
+```bash
+kubectl run myapp --image=nginx:latest --labels type=web --dry-run=client -oyaml > mypod.yaml
+```
+
+2. Create pod service YAML
+    - membuat sebuah service untuk pod dengan nama myapp-svc, menggunakan type service NodePort untuk expose pod yg telah running 
+```bash
+kubectl expose pod myapp --port=80 --name=myapp-svc --type=NodePort --dry-run=client -oyaml > myapp-service.yaml
+```
+
+3. Create NodePort Service YAML
+    - membuat service dengan menggunakan type NodePort, Port NodePort 30001 dengan service ke pod menggunakan TCP port mapping di port 80:80.
+```bash
+kubectl create service nodeport myapp --tcp=80:80 --node-port=30001 --dry-run=client -oyaml > svc-nodeport.yaml
+```
+
+4. Create Deployment YAML 
+    - membuat deployment dengan nama deployapp with image Nginx
+```bash
+kubectl create deployment deployapp --image=nginx:latest --dry-run=client -oyaml > deployment.yaml
+```
+
+5. Create Deployment service YAML
+    - membuat service NodePort YAML khusus untuk Deployment deployapp dengan port service 8080
+```bash
+kubectl expose deployment deployapp --type=NodePort --port=80 --name=deployment-svc --dry-run=client -oyaml > deployment-svc.yaml
+```
+
+6. Create Job YAML
+  - membuat job dengan nama myjob menggunakan image nginx
+```bash
+kubectl create job myjob --image=nginx:latest --dry-run=client -oyaml > job.yaml
+```
+
+7. Create CronJob YAML
+    - membuat cronjob dengan nama mycronjob menggunakan image nginx dan cron schedule 
+```bash
+kubectl create cj mycronjob --image=nginx:latest --schedule="* * * *" --dry-run=client -oyaml > cronjob.yaml
+```
