@@ -40,6 +40,10 @@ source /root/.bashrc
 ```bash
 vi /home/rouf/.bashrc
 ```
+atau
+```bash
+nano ~/.bashrc
+```
 note: jika sudah di paste silahkan di aktifnya dengan command berikut:
 ```bash
 source ~/.bashrc
