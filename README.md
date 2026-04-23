@@ -3,7 +3,7 @@
 </p>
 
 # CKAD: Certified Kubernetes Application Developer
-Mempelajari pehamahan tentang cara menghadapi ujian CKAD. Pertanyaan berbasis skenario yang dirancang sedemikan rupa agar realistis dan mirip dengan situasi dunia nyata, guna mempercepat tujuan menjadi profesional Certified Kubernetes Application Developer. Materi saya ambil dari mempelajari course di Udemy.
+Mempelajari pemahaman tentang cara menghadapi ujian CKAD. Pertanyaan berbasis skenario yang dirancang sedemikan rupa agar realistis dan mirip dengan situasi dunia nyata, guna mempercepat tujuan menjadi profesional Certified Kubernetes Application Developer. Materi saya ambil dari mempelajari course di Udemy.
 
 ## Shortcut 
 Gunakan shorcut untuk beberapa command di kubernetes, memudahkan dalam konfigurasi dan meminimalisir kesalahan typo dalam memasukan command. karena ketika ada kesalahan dalam memasukan command itu sangat krusial saat ujian CKAD bisa mengurangi poin. berikut list shorcut yang aku digunakan
